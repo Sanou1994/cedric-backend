@@ -16,6 +16,14 @@ import com.modelsisspringbootfullstack.entities.Role;
 import com.modelsisspringbootfullstack.entities.Utilisateur;
 
 public final class Utility {
+	// CONSTANT POUR LA SECURITE
+		public static final long EXPIRATION_TIME =365 * 24 * 60 * 60 ;
+		public static final String TOKEN_PREFIX = "Bearer ";
+		public static final String HEADER_STRING = "Authorization";
+		public static final String SECRET = "javainuse";
+		public static final String NOTREEMAIL ="sanouarouna1994@gmail.com";
+		
+	
 	
 	public static final String ADD_PRODUCT = "/products";
 	public static final String UPDATE_PRODUCT = "/products";

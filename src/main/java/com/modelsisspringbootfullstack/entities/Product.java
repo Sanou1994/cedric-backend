@@ -1,6 +1,7 @@
 package com.modelsisspringbootfullstack.entities;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,12 +19,12 @@ public class Product {
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 private String name;
-private String dateCreated;
+private Date dateCreated;
 private String type;
 @ManyToMany(targetEntity=Utilisateur.class, mappedBy="products")
 private List<Utilisateur> users = new ArrayList<Utilisateur>();
 
-public Product(String name, String dateCreated, String type,List<Utilisateur> users) {
+public Product(String name, Date dateCreated, String type,List<Utilisateur> users) {
 	super();
 	this.name = name;
 	this.dateCreated = dateCreated;

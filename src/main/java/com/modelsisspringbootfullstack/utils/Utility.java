@@ -28,6 +28,8 @@ public final class Utility {
 	public static final String ADD_PRODUCT = "/products";
 	public static final String UPDATE_PRODUCT = "/products";
 	public static final String GET_ALL_PRODUCTS = "/products";
+	public static final String GET__PRODUCT_BY_ID = "/products/{id}";
+
 	
 	public static final String ADD_PRODUCTTYPE = "/productType";
 	public static final String GET_ALL_PRODUCTTYPES = "/productTypes";
@@ -81,7 +83,7 @@ public final class Utility {
 		ProductDtoResponse  productDtoResponse = new  ProductDtoResponse() ;
 	    return ( product != null)? modelMapper.map( product,ProductDtoResponse.class) :  productDtoResponse;
 	}
-	public static   Product   productDtoResponseConvertToProduct( Product  productDtoResponse) {
+	public static   Product   productDtoResponseConvertToProduct( ProductDtoResponse  productDtoResponse) {
 		ModelMapper modelMapper = new ModelMapper(); 
 		Product  product = modelMapper.map( productDtoResponse,Product.class);
 	    return  product;

@@ -20,7 +20,7 @@ public class ProductService implements IProductService{
     private ProductRepository productRepository;
 	
 	@Override
-	public ProductDtoResponse createOrUpdateProduct(ProductDtoRequest productDtoRequest) {
+	public ProductDtoResponse createProduct(ProductDtoRequest productDtoRequest) {
 		ProductDtoResponse productDtoResponse = null;
 		try {
 			Product product = Utility.productDtoRequestConvertToProduct(productDtoRequest);
@@ -39,6 +39,26 @@ public class ProductService implements IProductService{
 		 List<ProductDtoResponse> productDtoResponses = products.stream()
 				 .map(product -> Utility.productConvertToProductDtoResponse(product)).collect(Collectors.toList());
 		return productDtoResponses;
+	}
+
+	@Override
+	public ProductDtoResponse updateProduct(ProductDtoResponse productDto) {
+		ProductDtoResponse productDtoResponse = null;
+		try {
+			Product product = Utility.productDtoResponseConvertToProduct(productDto);
+			productDtoResponse = Utility.productConvertToProductDtoResponse(productRepository.save(product));
+				
+		} catch (Exception e) {
+			productDtoResponse = new ProductDtoResponse();
+		}
+		return productDtoResponse;
+	}
+
+
+	@Override
+	public ProductDtoResponse getProductById(Long id) {
+		ProductDtoResponse	productDtoResponse = Utility.productConvertToProductDtoResponse(productRepository.findById(id).get());
+		return productDtoResponse;
 	}
 
 }

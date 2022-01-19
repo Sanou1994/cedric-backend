@@ -7,6 +7,9 @@ import com.modelsisspringbootfullstack.dto.response.ProductDtoResponse;
 
 public interface IProductService {
 	//MANAGER PRODUCT
-	  public ProductDtoResponse createOrUpdateProduct( ProductDtoRequest ProductDtoRequest);
+	  public ProductDtoResponse createProduct( ProductDtoRequest ProductDtoRequest);
+	  public ProductDtoResponse updateProduct( ProductDtoResponse productDtoResponse);
 	  public List<ProductDtoResponse> getAllProducts();
+	  public ProductDtoResponse getProductById(Long id);
+
 }

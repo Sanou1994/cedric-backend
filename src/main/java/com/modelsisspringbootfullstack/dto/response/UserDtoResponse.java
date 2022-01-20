@@ -15,7 +15,7 @@ public class UserDtoResponse {
 	private String username;
 	private String email;
 	private String login;
-	private String passord;
+	private String password;
 	List<Role> roles;
 	private List<Product> products = new ArrayList<Product>();
 }

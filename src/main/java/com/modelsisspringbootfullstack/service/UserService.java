@@ -74,4 +74,18 @@ public class UserService implements IUserService{
 		}
 		return userMap ;
 	}
+
+
+	@Override
+	public boolean deleteUser(Long id) {
+		boolean resultat =false;
+		try {
+			Utilisateur userSave = userRepository.findById(id).get();
+			userRepository.delete(userSave);
+			resultat=true;
+		} catch (Exception e) {
+			resultat=false;
+		}
+		return resultat;
+	}
 }

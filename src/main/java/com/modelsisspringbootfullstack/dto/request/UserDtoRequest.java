@@ -14,6 +14,7 @@ public class UserDtoRequest {
 	private String username;
 	private String email;
 	private String login;
+	private String password;
 	List<Role> roles;
 	private List<Product> products = new ArrayList<Product>();
 }

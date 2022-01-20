@@ -36,7 +36,9 @@ public final class Utility {
 
 	public static final String DO_REGISTER = "/user/register";
 	public static final String DO_LOGIN = "/user/login";
-	
+	public static final String GET_ALL_USERS = "/users";
+	public static final String DELETE_ALL_USER = "/users/{id}";
+
 	//LES MAPPERS DTO A DAO USER
 		public static  UserDtoResponse utilisateurConvertToUserDtoResponse(Utilisateur utilisateur) {
 			ModelMapper modelMapper = new ModelMapper(); 

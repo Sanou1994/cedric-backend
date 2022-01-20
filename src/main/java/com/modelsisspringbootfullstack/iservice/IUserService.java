@@ -12,5 +12,6 @@ public interface IUserService {
 	  public UserDtoResponse login_up(UserDtoRequest user);
 	  public UserDtoResponse createOrUpdateUser( UserDtoRequest userDtoRequest);
 	  public List<UserDtoResponse> getAllUsers();
+	  public boolean deleteUser(Long id);
 	  public List<UserDtoResponse> addProduct(ProductDtoRequest productDtoRequest);
 }

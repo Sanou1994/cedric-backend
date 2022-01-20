@@ -2,12 +2,12 @@ package com.modelsisspringbootfullstack.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.modelsisspringbootfullstack.dto.request.UserDtoRequest;
 import com.modelsisspringbootfullstack.dto.response.UserDtoResponse;
+import com.modelsisspringbootfullstack.entities.Login;
 import com.modelsisspringbootfullstack.iservice.IUserService;
 import com.modelsisspringbootfullstack.utils.Utility;
 
@@ -20,8 +20,8 @@ public class RestControllerUser {
 		UserDtoResponse tournoiAdd =iUserService.createOrUpdateUser(tournoi);
 		return tournoiAdd;
 	}
-	@PutMapping(Utility.DO_LOGIN)
-	public UserDtoResponse getUpdateUser( @RequestBody UserDtoRequest UserDtoRequest){
-		return iUserService.createOrUpdateUser(UserDtoRequest);
+	@PostMapping(Utility.DO_LOGIN)
+	public UserDtoResponse getUpdateUser( @RequestBody Login login){
+		return iUserService.se_connecter(login.getLogin(), login.getPassword());
     }
 }

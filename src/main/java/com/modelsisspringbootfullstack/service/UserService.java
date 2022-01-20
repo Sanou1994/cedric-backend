@@ -53,7 +53,7 @@ public class UserService implements IUserService{
 	@Override
 	public UserDtoResponse se_connecter(String username, String password) {
 		UserDtoResponse userMap = null;
-		Utilisateur user = userRepository.findByUsername(username);
+		Utilisateur user = userRepository.findByEmail(username);
 			if(user != null){
 				userMap = Utility.utilisateurConvertToUserDtoResponse(user);
 			}	
